@@ -3,7 +3,7 @@ import axios from 'axios'
 // Single source of truth for the backend origin — SocketContext imports
 // this instead of hardcoding its own port, so REST and WebSocket can
 // never point at two different ports again.
-export const API_ORIGIN = 'http://localhost:3000'
+export const API_ORIGIN = 'https://linkedin-lite-backend-uj8a.onrender.com'
 
 const http = axios.create({
   baseURL: `${API_ORIGIN}/api`,
