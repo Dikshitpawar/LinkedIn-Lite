@@ -1,0 +1,101 @@
+.feed-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.feed-side__card {
+  background: var(--surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+.feed-side__card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.feed-side__card-head h3 {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+}
+
+.feed-side__link {
+  font-size: 12px;
+  font-weight: var(--weight-semibold);
+  color: var(--brand-400);
+  text-decoration: none;
+}
+.feed-side__link:hover { text-decoration: underline; }
+
+.feed-side__empty {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  text-align: center;
+  padding: var(--space-3) 0;
+}
+
+.feed-side__people {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.feed-side__person {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  padding: 6px;
+  margin: -6px;
+  transition: background var(--duration-fast);
+}
+.feed-side__person:hover { background: var(--surface-3); }
+
+.feed-side__person-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.feed-side__person-name {
+  font-size: 13px;
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+}
+
+.feed-side__person-bio {
+  font-size: 11.5px;
+  color: var(--text-tertiary);
+  line-height: 1.4;
+}
+
+.feed-side__card--gradient {
+  background: var(--surface-3);
+  border-color: var(--border-strong);
+}
+
+.feed-side__card--gradient h3 {
+  margin-bottom: var(--space-2);
+}
+
+.feed-side__card--gradient p {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: var(--leading-normal);
+  margin-bottom: var(--space-3);
+}
+
+.feed-side__footer {
+  text-align: center;
+  font-size: 11.5px;
+  color: var(--text-tertiary);
+  padding: var(--space-2) 0;
+}

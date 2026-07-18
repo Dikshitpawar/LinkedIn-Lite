@@ -1,0 +1,21 @@
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+.avatar--fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  color: #fff;
+  letter-spacing: 0.02em;
+  user-select: none;
+}
+
+.avatar--ring {
+  box-shadow: 0 0 0 2px var(--surface-2), 0 0 0 4px var(--brand-500);
+}

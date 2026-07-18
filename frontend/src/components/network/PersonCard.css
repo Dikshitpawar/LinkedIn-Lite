@@ -1,0 +1,169 @@
+.person-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: all var(--duration-base);
+}
+
+.person-card:hover {
+  border-color: var(--border-default);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.person-card__main {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  text-decoration: none;
+}
+
+.person-card__avatar-wrap { position: relative; flex-shrink: 0; }
+.person-card__info { flex: 1; min-width: 0; }
+
+.person-card__name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  transition: color var(--duration-fast);
+}
+
+.person-card__main:hover .person-card__name { color: var(--brand-400); }
+
+.person-card__bio {
+  font-size: 12.5px;
+  color: var(--text-tertiary);
+  line-height: var(--leading-normal);
+  margin-bottom: 8px;
+}
+
+.person-card__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.person-card__skill {
+  background: var(--surface-4);
+  color: var(--text-secondary);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: var(--weight-medium);
+  border: 1px solid var(--border-subtle);
+}
+
+.person-card__action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.person-card__pair {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.person-card__badge {
+  font-size: 12px;
+  font-weight: var(--weight-semibold);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+}
+
+.person-card__badge--pending {
+  background: var(--surface-4);
+  color: var(--brand-400);
+}
+
+.person-card__badge--muted {
+  background: var(--surface-3);
+  color: var(--text-tertiary);
+}
+
+.person-card__badge--connected {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--surface-4);
+  color: var(--text-primary);
+}
+
+.person-card__connected-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.person-card__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-default);
+  background: var(--surface-3);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.person-card__icon-btn:hover,
+.person-card__icon-btn:active {
+  background: rgba(245,72,76,0.12);
+  border-color: rgba(245,72,76,0.3);
+  color: var(--accent-rose);
+}
+
+.person-card__confirm-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.person-card__confirm-text {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+.connections-page__tab,
+.network-tabs__btn,
+button[class*="tab"] { 
+  background: var(--surface-2);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+  transition: all var(--duration-fast) ease;
+}
+
+.connections-page__tab:hover,
+.network-tabs__btn:hover,
+button[class*="tab"]:hover {
+  background: var(--surface-4);
+  color: var(--text-primary);
+  border-color: var(--border-default);
+}
+
+.connections-page__tab.active,
+.connections-page__tab--active,
+.network-tabs__btn.active,
+button[class*="tab"][class*="active"] {
+  background: var(--text-primary) !important; 
+  color: var(--surface-1) !important;
+  border-color: var(--text-primary) !important;
+}
+
+.connections-page__tab .badge,
+.network-tabs__btn span,
+button[class*="tab"] span {
+  background: rgba(128, 128, 128, 0.15);
+  color: inherit;
+}

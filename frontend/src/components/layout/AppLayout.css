@@ -1,0 +1,194 @@
+.app-layout {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) minmax(0, var(--content-width)) var(--panel-width);
+  gap: var(--space-5);
+  max-width: var(--max-layout);
+  margin: 0 auto;
+  padding: calc(var(--nav-height) + var(--space-6)) var(--space-5) var(--space-12);
+  min-height: 100vh;
+  align-items: start;
+}
+
+/* Sidebar */
+.app-layout__sidebar {
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-6));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Main */
+.app-layout__main { min-width: 0; }
+
+/* Right */
+.app-layout__right {
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-6));
+}
+
+/* Profile sidebar card */
+.sidebar-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+  transition: border-color var(--duration-base);
+}
+
+.sidebar-card:hover { border-color: var(--border-default); }
+
+.sidebar-card__cover {
+  height: 70px;
+  background: linear-gradient(135deg, var(--surface-5) 0%, var(--surface-3) 50%, var(--surface-5) 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+.sidebar-card__avatar-wrap {
+  position: relative;
+  width: fit-content;
+  margin: -31px 0 0 16px;
+}
+
+.sidebar-card__avatar {
+  margin: 0;
+  border: 3px solid var(--surface-2);
+}
+
+.sidebar-card__info {
+  padding: var(--space-3) var(--space-4) 0;
+}
+
+/* ── Online status dot — reused anywhere an avatar needs presence ── */
+.status-dot {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 13px;
+  height: 13px;
+  border-radius: var(--radius-full);
+  border: 2.5px solid var(--surface-2);
+  background: var(--text-tertiary); /* offline/default: gray dot */
+}
+
+.status-dot--online {
+  background: var(--success);
+}
+
+.sidebar-card__name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.sidebar-card__bio {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  line-height: 1.5;
+}
+
+.sidebar-card__stats {
+  display: flex;
+  margin-top: var(--space-3);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.sidebar-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-3) var(--space-2);
+  gap: 2px;
+  border-right: 1px solid var(--border-subtle);
+}
+.sidebar-stat:last-child { border-right: none; }
+
+.sidebar-stat__val {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.sidebar-stat--highlight .sidebar-stat__val { color: var(--brand-400); }
+
+.sidebar-stat__key {
+  font-size: 10px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Sidebar nav */
+.sidebar-nav {
+  background: var(--surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebar-nav__link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: 13.5px;
+  font-weight: var(--weight-medium);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--duration-fast);
+}
+
+.sidebar-nav__link:hover {
+  background: var(--surface-3);
+  color: var(--text-primary);
+}
+
+.sidebar-nav__link--active {
+  background: var(--surface-4);
+  color: var(--brand-300);
+  font-weight: var(--weight-semibold);
+}
+
+.sidebar-nav__icon {
+  width: 22px;
+  text-align: center;
+  font-size: 15px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .app-layout {
+    grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  }
+  .app-layout__right { display: none; }
+}
+
+@media (max-width: 860px) {
+  .app-layout {
+    grid-template-columns: 1fr;
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+  .app-layout__sidebar { display: none; }
+}
+
+@media (max-width: 480px) {
+  .app-layout {
+    padding-left: var(--space-3);
+    padding-right: var(--space-3);
+    padding-top: calc(var(--nav-height) + var(--space-3));
+    gap: var(--space-3);
+  }
+}

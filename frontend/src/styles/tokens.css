@@ -1,0 +1,180 @@
+/* ════════════════════════════════════════
+   NETLINK — DESIGN TOKENS
+   Minimal black & white professional theme
+   Dark mode is default; [data-theme="light"] overrides below.
+════════════════════════════════════════ */
+
+:root {
+  /* ── Brand (monochrome — this IS the black/white theme) ── */
+  --brand-50:  #f5f5f5;
+  --brand-100: #e5e5e5;
+  --brand-200: #d4d4d4;
+  --brand-300: #a3a3a3;
+  --brand-400: #737373;
+  --brand-500: #ffffff;   /* primary action color — white on dark surfaces */
+  --brand-600: #e5e5e5;
+  --brand-700: #d4d4d4;
+  --brand-800: #a3a3a3;
+  --brand-900: #737373;
+
+  /* kept as functional accents only — used for status, not decoration */
+  --accent-mint:   #a3a3a3;
+  --accent-rose:   #f5484c;
+  --accent-amber:  #f5a524;
+  --accent-violet: #8a8a8a;
+
+  /* ── Surface (near-black, dark mode default) ── */
+  --surface-0:   #000000;   /* deepest bg */
+  --surface-1:   #0a0a0a;   /* page bg */
+  --surface-2:   #131313;   /* card */
+  --surface-3:   #1a1a1a;   /* elevated */
+  --surface-4:   #232323;   /* hover/input */
+  --surface-5:   #2e2e2e;   /* active */
+  --surface-nav: rgba(10,10,10,0.82);  /* translucent navbar backdrop */
+
+  /* ── Borders ── */
+  --border-subtle:  rgba(255,255,255,0.08);
+  --border-default: rgba(255,255,255,0.14);
+  --border-strong:  rgba(255,255,255,0.22);
+  --border-brand:   rgba(255,255,255,0.5);
+
+  /* ── Text ── */
+  --text-primary:   #ffffff;
+  --text-secondary: #a3a3a3;
+  --text-tertiary:  #6b6b6b;
+  --text-inverse:   #000000;
+
+  /* ── Semantic (kept in color — this is functional, not brand) ── */
+  --success: #22c55e;
+  --warning: var(--accent-amber);
+  --error:   var(--accent-rose);
+  --info:    var(--brand-300);
+
+  /* ── Typography ── */
+  --font-sans:    'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Syne', var(--font-sans);
+
+  --text-xs:   11px;
+  --text-sm:   13px;
+  --text-base: 15px;
+  --text-md:   17px;
+  --text-lg:   20px;
+  --text-xl:   24px;
+  --text-2xl:  30px;
+  --text-3xl:  38px;
+  --text-4xl:  48px;
+
+  --weight-normal:   400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-extrabold:800;
+
+  --leading-tight:  1.2;
+  --leading-snug:   1.4;
+  --leading-normal: 1.6;
+  --leading-relaxed:1.75;
+
+  /* ── Spacing ── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  28px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* ── Radii (as-needed, kept modest for a professional feel) ── */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+  --radius-2xl: 20px;
+  --radius-full:9999px;
+
+  /* ── Shadows ── */
+  --shadow-xs: 0 1px 3px rgba(0,0,0,0.5);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.6);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.7);
+  --shadow-xl: 0 16px 64px rgba(0,0,0,0.8);
+  --shadow-brand: 0 4px 24px rgba(255,255,255,0.12);
+  --shadow-brand-lg: 0 8px 40px rgba(255,255,255,0.18);
+
+  /* ── Transitions (Modern Smooth) ── */
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast:   120ms;
+  --duration-base:   200ms;
+  --duration-slow:   350ms;
+  --duration-slower: 500ms;
+
+  /* ── Layout ── */
+  --nav-height:    60px;
+  --sidebar-width: 256px;
+  --content-width: 600px;
+  --panel-width:   240px;
+  --max-layout:    1200px;
+  --max-narrow:    480px;
+}
+
+/* ── LIGHT THEME ── */
+[data-theme="light"] {
+  --brand-500: #000000;   /* primary action color — black on light surfaces */
+  --brand-600: #1a1a1a;
+  --brand-700: #333333;
+  --brand-800: #525252;
+  --brand-900: #737373;
+
+  --accent-mint:   #525252;
+  --accent-violet: #737373;
+
+  --surface-0:   #ffffff;
+  --surface-1:   #fafafa;
+  --surface-2:   #ffffff;
+  --surface-3:   #f5f5f5;
+  --surface-4:   #eeeeee;
+  --surface-5:   #e5e5e5;
+  --surface-nav: rgba(255,255,255,0.82);
+
+  --border-subtle:  rgba(0,0,0,0.08);
+  --border-default: rgba(0,0,0,0.12);
+  --border-strong:  rgba(0,0,0,0.2);
+  --border-brand:   rgba(0,0,0,0.4);
+
+  --text-primary:   #000000;
+  --text-secondary: #525252;
+  --text-tertiary:  #8a8a8a;
+  --text-inverse:   #ffffff;
+
+  --shadow-xs: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.1);
+  --shadow-xl: 0 16px 64px rgba(0,0,0,0.14);
+  --shadow-brand: 0 4px 24px rgba(0,0,0,0.12);
+  --shadow-brand-lg: 0 8px 40px rgba(0,0,0,0.18);
+}
+
+/* ── Root-level theme transition — Modern Smooth toggle ── */
+html {
+  transition: background-color var(--duration-slow) var(--ease-out);
+}
+body {
+  background: var(--surface-1);
+  color: var(--text-primary);
+  transition: background-color var(--duration-slow) var(--ease-out),
+              color var(--duration-slow) var(--ease-out);
+}
+
+/* ── Scrollbar ── */
+* { scrollbar-width: thin; scrollbar-color: var(--surface-5) transparent; }
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--surface-5); border-radius: 4px; }

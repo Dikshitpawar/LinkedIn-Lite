@@ -1,0 +1,22 @@
+.post-details__back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: var(--weight-semibold);
+  color: var(--text-secondary);
+  cursor: pointer;
+  margin-bottom: var(--space-4);
+  font-family: var(--font-sans);
+  transition: all var(--duration-fast);
+}
+
+.post-details__back:hover {
+  background: var(--surface-3);
+  color: var(--text-primary);
+  border-color: var(--border-default);
+}

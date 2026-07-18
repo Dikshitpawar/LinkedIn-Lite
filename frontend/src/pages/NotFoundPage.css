@@ -1,0 +1,38 @@
+.notfound {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-1);
+  padding: var(--space-4);
+}
+
+.notfound__content {
+  text-align: center;
+  max-width: 400px;
+}
+
+.notfound__code {
+  font-family: var(--font-display);
+  font-size: 96px;
+  font-weight: var(--weight-extrabold);
+  line-height: 1;
+  background: linear-gradient(120deg, var(--brand-400), var(--accent-violet));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: var(--space-4);
+}
+
+.notfound__content h1 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  margin-bottom: var(--space-2);
+}
+
+.notfound__content p {
+  font-size: 14px;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-6);
+  line-height: var(--leading-relaxed);
+}
