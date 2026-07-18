@@ -14,9 +14,14 @@ const AuthContext = createContext(null);
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [accessToken, setAccessToken] = useState(null); 
-  const [loading, setLoading] = useState(true);
+  
+  const [loading, setLoading] = useState(() => {
+    return localStorage.getItem("was_logged_in") === "true";
+  });
+  
   const initialized = useRef(false);
   const refreshTimerRef = useRef(null);
+
   const scheduleRefresh = useCallback((expiresAtStr) => {
     if (refreshTimerRef.current) clearTimeout(refreshTimerRef.current);
 
@@ -34,12 +39,18 @@ export function AuthProvider({ children }) {
         setAuthToken(null);
         setAccessToken(null);
         setUser(null);
+        localStorage.removeItem("was_logged_in"); 
       }
     }, delay);
   }, []);
+
   useEffect(() => {
     if (initialized.current) return;
     initialized.current = true;
+    if (localStorage.getItem("was_logged_in") !== "true") {
+      setLoading(false);
+      return;
+    }
 
     authApi
       .refresh()
@@ -50,11 +61,15 @@ export function AuthProvider({ children }) {
         scheduleRefresh(r.data.accessToken.expiresAt);
         return authApi.getMe();
       })
-      .then((r) => setUser(r.data.user))
+      .then((r) => {
+        setUser(r.data.user);
+        localStorage.setItem("was_logged_in", "true"); 
+      })
       .catch(() => {
         setAuthToken(null);
         setAccessToken(null);
         setUser(null);
+        localStorage.removeItem("was_logged_in"); 
       })
       .finally(() => setLoading(false));
 
@@ -70,6 +85,9 @@ export function AuthProvider({ children }) {
       setAuthToken(token);
       setAccessToken(token);
       setUser(r.data.user);
+      
+      localStorage.setItem("was_logged_in", "true");
+      
       scheduleRefresh(r.data.accessToken.expiresAt);
       return r.data.user;
     },
@@ -92,6 +110,8 @@ export function AuthProvider({ children }) {
     setAuthToken(null);
     setAccessToken(null);
     setUser(null);
+    
+    localStorage.removeItem("was_logged_in");
   }, []);
 
   const updateUser = useCallback((updated) => {
