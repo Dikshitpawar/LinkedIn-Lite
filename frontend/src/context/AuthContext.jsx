@@ -13,7 +13,7 @@ const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
-  const [accessToken, setAccessToken] = useState(null); // kept in memory only, never localStorage
+  const [accessToken, setAccessToken] = useState(null); 
   const [loading, setLoading] = useState(true);
   const initialized = useRef(false);
   const refreshTimerRef = useRef(null);

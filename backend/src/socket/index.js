@@ -7,7 +7,7 @@ let io;
 const initializeSocket = (server) => {
   io = new Server(server, {
     cors: {
-      origin: "http://localhost:5173",
+      origin: "https://linkedin-lite-frontend.onrender.com",
       credentials: true,
     },
   });
