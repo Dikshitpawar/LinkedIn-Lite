@@ -322,7 +322,6 @@ export default function PostCard({
               alt={post.title}
               className="post-card__image"
               onLoad={() => setImgLoaded(true)}
-              onClick={() => navigate(`/post/${post._id}`)}
             />
           </div>
         )}

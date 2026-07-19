@@ -1,6 +1,7 @@
 import axios from 'axios'
 export const API_ORIGIN = 'https://linkedin-lite-backend-uj8a.onrender.com'
 
+
 const http = axios.create({
   baseURL: `${API_ORIGIN}/api`,
   withCredentials: true, 
